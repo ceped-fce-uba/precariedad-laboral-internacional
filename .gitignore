@@ -1,3 +1,7 @@
+# las bases se distribuyen por releases, no por git. las baja bajar_piggyback.R
+bases_por_pais/
+base_completa.parquet
+
 # History files
 .Rhistory
 .Rapp.history
@@ -38,9 +42,6 @@ vignettes/*.pdf
 
 # R Environment Variables
 .Renviron
-
-# pkgdown site
-docs/
 
 # translation temp files
 po/*~

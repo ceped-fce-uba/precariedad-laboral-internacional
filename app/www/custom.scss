@@ -1,0 +1,130 @@
+// Ajustes propios sobre el preset de bslib. Bootstrap 5.3 maneja los dos modos
+// con el atributo data-bs-theme, así que alcanza con definir las variables de
+// color en cada modo y todo lo demás las hereda.
+
+:root,
+[data-bs-theme="light"] {
+  --pm-bg:        #f7f8fa;
+  --pm-surface:   #ffffff;
+  --pm-border:    #e4e7ec;
+  --pm-fg:        #1b1f24;
+  --pm-muted:     #5a6169;
+  --pm-accent:    #2166ac;
+  --pm-accent-sd: #{rgba(#2166ac, .10)};
+}
+
+[data-bs-theme="dark"] {
+  --pm-bg:        #12161b;
+  --pm-surface:   #1a1f26;
+  --pm-border:    #2c333b;
+  --pm-fg:        #e8eaed;
+  --pm-muted:     #aab2bd;
+  --pm-accent:    #6ba3dd;
+  --pm-accent-sd: #{rgba(#6ba3dd, .14)};
+
+  --bs-body-bg:    #12161b;
+  --bs-body-color: #e8eaed;
+}
+
+body {
+  background-color: var(--pm-bg);
+  color: var(--pm-fg);
+}
+
+// ---- navbar ---------------------------------------------------------------
+
+.navbar {
+  border-bottom: 1px solid var(--pm-border);
+  backdrop-filter: saturate(160%) blur(6px);
+}
+
+.navbar-brand {
+  font-family: var(--bs-heading-font-family);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+// ---- cards ----------------------------------------------------------------
+
+.card {
+  background-color: var(--pm-surface);
+  border-color: var(--pm-border);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .04);
+}
+
+.card-header {
+  background-color: transparent;
+  border-bottom: 1px solid var(--pm-border);
+  font-family: var(--bs-heading-font-family);
+  font-weight: 600;
+}
+
+.bslib-sidebar-layout > .sidebar {
+  background-color: var(--pm-surface);
+}
+
+// ---- tipografía y detalles ------------------------------------------------
+
+h1, h2, h3, h4 { letter-spacing: -0.015em; }
+
+.lead-narrow { max-width: 62ch; }
+
+.text-muted-pm { color: var(--pm-muted) !important; }
+
+// bloque de texto explicativo, con la barrita de color a la izquierda
+.nota {
+  border-left: 3px solid var(--pm-accent);
+  background: var(--pm-accent-sd);
+  padding: .7rem .9rem;
+  border-radius: .35rem;
+  font-size: .88rem;
+  color: var(--pm-muted);
+}
+
+// pie de figura
+.pie-fig {
+  font-size: .74rem;
+  color: var(--pm-muted);
+  line-height: 1.45;
+}
+
+// botoncitos de atajo del selector de países
+.atajos .btn {
+  --bs-btn-padding-y: .12rem;
+  --bs-btn-padding-x: .5rem;
+  --bs-btn-font-size: .74rem;
+  border-radius: 999px;
+}
+
+// ---- ggiraph --------------------------------------------------------------
+
+.girafe_container_std { width: 100% !important; }
+
+.girafe svg { display: block; }
+
+// la barra de herramientas de ggiraph viene con fondo claro fijo
+[data-bs-theme="dark"] .ggiraph-toolbar-block {
+  background-color: var(--pm-surface) !important;
+  border-color: var(--pm-border) !important;
+}
+[data-bs-theme="dark"] .ggiraph-toolbar-icon { fill: var(--pm-muted) !important; }
+
+// ---- tablas DT ------------------------------------------------------------
+
+table.dataTable {
+  font-size: .85rem;
+  border-color: var(--pm-border) !important;
+}
+
+[data-bs-theme="dark"] {
+  .dataTables_wrapper,
+  table.dataTable,
+  table.dataTable tbody td,
+  table.dataTable thead th {
+    color: var(--pm-fg) !important;
+    border-color: var(--pm-border) !important;
+  }
+  table.dataTable tbody tr { background-color: transparent !important; }
+  table.dataTable.stripe tbody tr.odd { background-color: rgba(255, 255, 255, .03) !important; }
+  .dataTables_wrapper .dataTables_paginate .paginate_button { color: var(--pm-fg) !important; }
+}
