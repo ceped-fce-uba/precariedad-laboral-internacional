@@ -34,8 +34,8 @@ homogeneizada están explicados en el documento de trabajo del CEPED.
 
 El diccionario de variables, con sus valores y referencias, está en
 `Metadata.xlsx`. En `docs/` hay además una página con [aclaraciones
-metodológicas](docs/aclaraciones_metodologicas.Rmd) y otra con [ejemplos
-de uso](docs/ejemplos_de_uso.Rmd), escritas para una versión anterior de
+metodológicas](https://github.com/ceped-fce-uba/precariedad-laboral-internacional/blob/main/docs/aclaraciones_metodologicas.Rmd) y otra con [ejemplos
+de uso](https://github.com/ceped-fce-uba/precariedad-laboral-internacional/blob/main/docs/ejemplos_de_uso.Rmd), escritas para una versión anterior de
 la base.
 
 ## Encuestas procesadas
@@ -79,7 +79,7 @@ países y años apilados en una sola tabla, en formato parquet:
 ## Cómo bajar las bases
 
 Los archivos no están en el repositorio: se distribuyen como assets de
-los [releases](../../releases). Se pueden bajar uno por uno con los
+los [releases](https://github.com/ceped-fce-uba/precariedad-laboral-internacional/releases). Se pueden bajar uno por uno con los
 enlaces del cuadro, o todos juntos desde R con `bajar_piggyback.R`:
 
 ``` r
@@ -141,7 +141,7 @@ países.
 -   **Metadata.xlsx**: diccionario de la base y criterios de
     homogeneización por país.
 -   **app/**: aplicación Shiny para explorar la base. Ver su
-    [README](app/README.md).
+    [README](https://github.com/ceped-fce-uba/precariedad-laboral-internacional/blob/main/app/README.md).
 -   **docs/**: aclaraciones metodológicas y ejemplos de uso.
 -   **fuentes_complementarias/**: archivos auxiliares que usan los
     documentos de `docs/` y la app (coeficientes de paridad de poder
@@ -183,7 +183,7 @@ publications:
 ## How to download the data
 
 The files are not stored in the repository: they are distributed as
-assets of the [releases](../../releases). Each country and year can be
+assets of the [releases](https://github.com/ceped-fce-uba/precariedad-laboral-internacional/releases). Each country and year can be
 downloaded from the table above, or all of them at once from R with
 `bajar_piggyback.R`. A complete database stacking every country and year
 into a single parquet table is also available.
