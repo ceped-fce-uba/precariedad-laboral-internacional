@@ -28,9 +28,9 @@ nuestras publicaciones:
 ## Metodología
 
 Los criterios con los que se construyó cada variable de la base
-homogeneizada están explicados en el documento de trabajo del CEPED.
+homogeneizada están explicados en el siguiente documento de trabajo:
 
-<!-- TODO: agregar título, autores y enlace del documento de trabajo -->
+-   [*Armonización de encuestas de hogares para el estudio de la precariedad laboral internacional. Procedimientos y resultados para el año 2019.* J C Gutman y G Weksler *Serie Documentos de Trabajo del CEPED, 35, 1-29.*](https://drive.google.com/file/d/1k2-4yTjLxpuahNHm6OI4_5k3Mqmtqszq/view)
 
 El diccionario de variables, con sus valores y referencias, está en
 `Metadata.xlsx`. En `docs/` hay además una página con [aclaraciones
@@ -62,32 +62,18 @@ descarga para cada país y año.
 | Perú | Encuesta Nacional de Hogares | [2019](https://github.com/ceped-fce-uba/precariedad-laboral-internacional/releases/download/bases_por_pais/peru_2019.rds) |
 | Uruguay | Encuesta Continua de Hogares | [2019](https://github.com/ceped-fce-uba/precariedad-laboral-internacional/releases/download/bases_por_pais/uruguay_2019.rds), [2024](https://github.com/ceped-fce-uba/precariedad-laboral-internacional/releases/download/bases_por_pais/uruguay_2024.rds) |
 
-El año del enlace es el de referencia de la encuesta y no siempre
-coincide con el nombre del archivo: los datos de China, Estados Unidos y
-Europa son de 2018 pero se guardan como `_2019.rds`. En el caso de
-Estados Unidos, el suplemento ASEC pregunta por el año anterior al del
-relevamiento. La base de Europa reúne quince países en un solo archivo
-(Alemania, Austria, Bulgaria, Dinamarca, España, Francia, Grecia, Italia,
-Noruega, Países Bajos, Polonia, Portugal, Reino Unido, Rumanía y Suecia)
-y por lo tanto tiene varios valores de `PAIS`; Alemania es la única con
-año de referencia 2017.
-
 Además de las bases por país, se publica una base completa con todos los
 países y años apilados en una sola tabla, en formato parquet:
 [base_completa.parquet](https://github.com/ceped-fce-uba/precariedad-laboral-internacional/releases/download/base_completa/base_completa.parquet).
 
 ## Cómo bajar las bases
 
-Los archivos no están en el repositorio: se distribuyen como assets de
-los [releases](https://github.com/ceped-fce-uba/precariedad-laboral-internacional/releases). Se pueden bajar uno por uno con los
+Las bases están alojadas en los [releases](https://github.com/ceped-fce-uba/precariedad-laboral-internacional/releases) del presente repositorio. Se pueden bajar uno por uno con los
 enlaces del cuadro, o todos juntos desde R con `bajar_piggyback.R`:
 
 ``` r
 source("bajar_piggyback.R")
 ```
-
-Mientras el repositorio sea privado, tanto los enlaces como la descarga
-desde R requieren una cuenta de GitHub con acceso.
 
 ## Descripción de la base
 
@@ -125,13 +111,7 @@ siguientes columnas:
 -   **PRECASEG**: Precariedad por falta de aportes a la seguridad social.
 -   **PRECAPLURI**: Precariedad por pluriempleo.
 
-No todas las encuestas permiten construir todas las variables: las que no
-están disponibles quedan en `NA`, y la disponibilidad puede cambiar de un
-año a otro dentro de un mismo país. Las ausencias más importantes son las
-de `PRECAREG` y `PRECASEG` en Europa y Estados Unidos (Uruguay tampoco
-tiene `PRECAREG`) y la de `PRECATEMP` en Estados Unidos. `PRECASALUD`,
-`PRECAPLURI` y las horas trabajadas están disponibles sólo en algunos
-países.
+Cabe aclarar que no todas las encuestas cuentan con la información necesaria para construir la totalidad de las variables. En esos casos, los datos faltantes figuran como NA, y es posible que la disponibilidad varíe entre distintos años para un mismo país. En particular, no se pudo construir PRECAREG ni PRECASEG para Europa y Estados Unidos (ni PRECATEMP para este último). Asimismo, las variables como PRECASALUD, PRECAPLURI y las horas trabajadas solo están disponibles en algunos casos.
 
 ## Estructura del repositorio
 
@@ -146,10 +126,6 @@ países.
 -   **fuentes_complementarias/**: archivos auxiliares que usan los
     documentos de `docs/` y la app (coeficientes de paridad de poder
     adquisitivo, series de productividad y salarios).
-
-Los scripts que procesan los microdatos originales de cada país y
-producen estas bases se mantienen aparte, junto con los microdatos
-crudos.
 
 ¡Gracias por utilizar nuestro repositorio! Si tenés alguna pregunta o
 sugerencia, no dudes en contactarnos. También podés proponer
@@ -180,16 +156,17 @@ publications:
     Graña, F Lastra, G Weksler *Ensayos de Economía 32 (61),
     124-151*](https://doi.org/10.15446/ede.v32n61.100343)
 
+
+Criteria are here:
+
+-   [*Armonización de encuestas de hogares para el estudio de la precariedad laboral internacional. Procedimientos y resultados para el año 2019.* J C Gutman y G Weksler *Serie Documentos de Trabajo del CEPED, 35, 1-29.*](https://drive.google.com/file/d/1k2-4yTjLxpuahNHm6OI4_5k3Mqmtqszq/view)
+
 ## How to download the data
 
-The files are not stored in the repository: they are distributed as
-assets of the [releases](https://github.com/ceped-fce-uba/precariedad-laboral-internacional/releases). Each country and year can be
+The files are stored as assets of the [releases](https://github.com/ceped-fce-uba/precariedad-laboral-internacional/releases). Each country and year can be
 downloaded from the table above, or all of them at once from R with
 `bajar_piggyback.R`. A complete database stacking every country and year
 into a single parquet table is also available.
-
-While the repository is private, both the links and the download from R
-require a GitHub account with access.
 
 ## Description of the data
 
